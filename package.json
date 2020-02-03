@@ -1,0 +1,24 @@
+{
+  "name": "survey-storybook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "storybook": "start-storybook -p 3003",
+    "build-storybook": "build-storybook -c .storybook -o .out"
+  },
+  "author": "Justin Ho <mujan5427@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@storybook/react": "^5.3.9",
+    "babel-loader": "^8.0.6"
+  },
+  "dependencies": {
+    "@storybook/addon-docs": "^5.3.9",
+    "@storybook/addon-knobs": "^5.3.9",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "styled-components": "^5.0.0"
+  }
+}
