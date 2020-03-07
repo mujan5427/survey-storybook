@@ -1,12 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { withReadme } from 'storybook-readme';
+import ButtonReadme from './README.md';
 
-
-export default {
-  title: 'Components | Button',
-  decorators: [withKnobs]
-};
 
 const Button = styled.button`
   appearance: none;
@@ -20,7 +18,7 @@ const Button = styled.button`
   font-weight: ${ props => props.fontWeight ? 'bold' : 'initial' };
 `;
 
-export const normalButton = () => {
+const normalButton = () => {
   const fontColor = text('文字顏色', '#666666');
   const fontSize = text('文字尺寸', '16');
   const fontText = text('文字內容', 'Normal Button');
@@ -34,3 +32,9 @@ export const normalButton = () => {
              { fontText }
          </Button>
 }
+
+
+storiesOf('Component | Button', module)
+  .addDecorator(withReadme(ButtonReadme))
+  .addDecorator(withKnobs)
+  .add('Normal', () => normalButton());
